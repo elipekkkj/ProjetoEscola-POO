@@ -43,7 +43,39 @@ public class Nota {
     }
 
     public static void adicionarNota() {
-        
+            Scanner scanner = new Scanner(System.in);
+    
+            
+            System.out.println("Escolha a disciplina:");
+            for (int i = 0; i < Disciplina.disciplinas.size(); i++) {
+                System.out.println((i + 1) + ". " + Disciplina.disciplinas.get(i).getNome());
+            }
+            int disciplinaIndex = scanner.nextInt() - 1;
+            scanner.nextLine(); 
+            Disciplina disciplina = Disciplina.disciplinas.get(disciplinaIndex);
+    
+            
+            System.out.println("Escolha o aluno:");
+            for (int i = 0; i < Aluno.alunos.size(); i++) {
+                System.out.println((i + 1) + ". " + Aluno.alunos.get(i).getNome());
+            }
+            int alunoIndex = scanner.nextInt() - 1;
+            scanner.nextLine(); 
+            Aluno aluno = Aluno.alunos.get(alunoIndex);
+    
+            System.out.print("Digite o valor da nota: ");
+            double valorNota = scanner.nextDouble();
+            scanner.nextLine(); 
+    
+            
+            Nota nota = new Nota(disciplina, valorNota, aluno);
+            notas.add(nota);
+    
+            
+            System.out.println("Nota adicionada com sucesso!");
+            System.out.println("Disciplina: " + disciplina.getNome());
+            System.out.println("Aluno: " + aluno.getNome());
+            System.out.println("Nota: " + valorNota);
     }
 
     public static void alimentaNota() {

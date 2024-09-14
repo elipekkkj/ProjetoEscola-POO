@@ -15,16 +15,24 @@ public class ProjetoApplication {
         Disciplina.alimentaDisciplina();
         Nota.alimentaNota();
 
+        menuPrincipal();
+
+    }
+
+    public static void menuPrincipal(){
+        
         Scanner sc = new Scanner(System.in);
         int opcao;
-
+        
         do {
 
-            System.out.println("Escolha como prosseguir: ");
+            System.out.println("---------------");
+            System.out.println("MENU PRINCIPAL");
+            System.out.println("---------------");
             System.out.println("1. Acessar o menu do aluno.");
             System.out.println("2. Acessar o menu do professor.");
             System.out.println("0. Sair.");
-
+            System.out.println("Escolha como prosseguir: ");
             opcao = sc.nextInt();
 
             switch (opcao) {
@@ -47,7 +55,5 @@ public class ProjetoApplication {
 
             }
         } while (opcao != 0);
-
     }
-
 }

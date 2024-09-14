@@ -53,6 +53,7 @@ public class Professor extends Pessoa {
         do {
             System.out.println("MENU PROFESSOR:");
             System.out.println("1. Adicionar nota");
+            System.out.println("2. Voltar ao menu principal");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = menuProfessor.nextInt();
@@ -60,6 +61,10 @@ public class Professor extends Pessoa {
             switch (opcao) {
                 case 1:
                     Nota.adicionarNota();
+                    break;
+                case 2:
+                    System.out.println("Voltando...");
+                    ProjetoApplication.menuPrincipal();
                     break;
                 case 0:
                     System.out.println("Saindo...");
